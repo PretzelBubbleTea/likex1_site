@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote</title>
+    <link rel="shortcut icon" href="images/icone/blue.ico" type="image/x-icon">
+    <style>
+        body {
+            animation-name: backmuda;
+            animation-duration: 10s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            user-select: none;
+            overflow: auto;
+        }
+
+        @font-face {
+            font-family: pou;
+            src: url(arquivos/pou.ttf);
+        }
+
+        @keyframes backmuda {
+            0% {
+                background-image: url(images/bg/xd.png);
+                background-size: 120px;
+                transition: all .3s;
+            }
+            50% {
+                background-image: url(images/bg/xd-e.png);
+                background-size: 120px;
+                transition: all .3s;
+            }
+            100% {
+                background-image: url(images/bg/xd-a.png);
+                background-size: 120px;
+                transition: all .3s;
+            }
+        }
+
+        .oesky {
+            position: relative;
+            top: 100px;
+            display: flex;
+            justify-content: center;
+        }
+
+        #temporizador, #aviso {
+            font-family: pou;
+            color: rgb(255, 0, 0);
+            text-shadow: 2px 2px 2px black, -2px 2px 2px black, 2px -2px 2px black, -2px -2px 2px black;
+            font-size: 50px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            top: 190px;
+        }
+
+        #aviso {
+            color: #cfcfcf;
+            text-align: center;
+        }
+
+        button {
+            background-color: #28f000;
+            border: none;
+            border-radius: 40px;
+            padding: 20px;
+            color: #ffffff;
+            text-shadow: 2px 2px 2px black, -2px 2px 2px black, 2px -2px 2px black, -2px -2px 2px black;
+            font-weight: bold;
+            transition: all .3s;
+            filter: drop-shadow(0 0 10px #00ff04);
+            font-size: 50px;
+            animation-name: animar;
+            animation-duration: 1s;
+            animation-direction: alternate;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            font-family: pou;
+        }
+
+
+        button:active {
+            background-color: black;
+            filter: drop-shadow(0 0 10px #000);
+            color: white;
+        }
+
+
+        .botao {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            top: 150px;
+        }
+
+        @keyframes animar {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+
+
+        .votos {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            top: 30px;
+            font-family: pou;
+            color: #fff;
+            text-shadow: #000 2px 2px 2px, #000 -2px 2px 2px, #000 -2px -2px 2px, #000 2px -2px 2px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="oesky">
+        <img src="images/galeria/oeskypintando.png" height="310px">
+    </div>
+    <div class="botao">
+        <a href="resultado.html">
+            <button>
+                VOTE 1
+            </button>
+        </a>
+    </div>
+    <div id="temporizador"></div>
+
+    <!--
+     <script>
+        function atualizarTemporizador() {
+            // Data de publicação do site (substitua isso pela data real de publicação)
+            var dataPublicacao = new Date('2023-11-19T00:00:00Z');
+
+            // Adicionar 15 horas à data de publicação
+            var dataFinal = new Date(dataPublicacao);
+            dataFinal.setHours(dataFinal.getHours() + 12);
+
+            // Atualizar o temporizador a cada segundo
+            var intervalo = setInterval(function () {
+                // Calcular a diferença entre as datas
+                var diferenca = dataFinal - new Date();
+
+                // Se a diferença for menor que ou igual a 0, parar o temporizador
+                if (diferenca <= 0) {
+                    clearInterval(intervalo);
+                    document.getElementById("temporizador").innerHTML = "STARTS SOON! ";
+                } else {
+                    // Calcular horas, minutos e segundos
+                    var horas = Math.floor(diferenca / (1000 * 60 * 60));
+                    var minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+                    var segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+                    // Atualizar o conteúdo na página
+                    document.getElementById("temporizador").innerHTML = horas + "h " + minutos + "m " + segundos + "s";
+                }
+            }, 1000);
+        }
+
+        // Iniciar o temporizador quando a página carregar
+        window.onload = function () {
+            atualizarTemporizador();
+        };
+    </script>
+<!-->
+</body>
+</html>
